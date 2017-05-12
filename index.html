@@ -6,27 +6,30 @@
 
 <body>
     <div class="container">
-        <div class="carousel-container">
-            <div id="list" class="img-list">
-                <img>
-                <img>
-                <img>
-                <img>
-                <img>
-                <img>
-                <img>
+        <div class="carousel-container" id="carousel-container">
+            <div id="image-list" class="img-list">
+                <img src="images/image1.jpg" alt="1"/>
+                <img src="images/image2.jpg" alt="2"/>
+                <img src="images/image3.jpg" alt="3"/>
+                <img src="images/image4.jpg" alt="4"/>
+                <img src="images/image5.jpg" alt="5"/>
             </div>
-            <div class="buttons">
-                <span></span>
+            <div class="buttons" id="buttons">
+                <span class="on"></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="arrow pre"></div>
-            <div class="arrow next"></div>
+            <div class="arrow pre" id="pre-button">
+                <img src="images/ic_keyboard_arrow_left_white_24dp_1x.png"/>
+            </div>
+            <div class="arrow next" id="next-button">
+                <img src="images/ic_keyboard_arrow_right_white_24dp_1x.png"/>
+            </div>
         </div>
     </div>
 </body>
+<script src="js/carousel.js"></script>
 
 </html>

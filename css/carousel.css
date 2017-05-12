@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .container{
@@ -22,10 +23,17 @@
 
 .img-list{
     position: absolute;
-    width: 4200px;
+    left: 0;
+    width: 3000px;
     height: 400px;
     overflow: hidden;
     background-color: #ccc;
+}
+
+.img-list img{
+    float: left;
+    width: 600px;
+    height: 400px;
 }
 
 .buttons{
@@ -63,6 +71,21 @@
     border-radius: 50%;
     background-color: #8b8b8b;
     z-index: 4;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.arrow:active{
+    background-color: #ccc;
+}
+
+.arrow img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }
 
 .pre{
