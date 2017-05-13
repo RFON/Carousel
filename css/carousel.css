@@ -28,6 +28,7 @@
     height: 400px;
     overflow: hidden;
     background-color: #ccc;
+    -webkit-animation-fill-mode: forwards;
 }
 
 .img-list img{

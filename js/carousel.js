@@ -7,7 +7,17 @@ var timer
 var current = 0
 var theLastPositon = -2400
 var pictureWidth = 600
+
+var animate = function(element, className){
+    element.classList.add(className)
+    element.addEventListener('animationend',function(){
+        element.classList.remove(className)
+    },false)
+    console.log(list.style.left)
+}
+
 var animateDistance = function (distance) {
+    console.log(list.style.left)
     var newLeft = parseInt(list.offsetLeft) + distance
     list.style.left = newLeft + "px"
     if (newLeft < theLastPositon) {
@@ -37,6 +47,7 @@ pre.addEventListener("click", function () {
         current = 4
     }
     buttonShow()
+    animate(list,"translate-left",pictureWidth)
     animateDistance(pictureWidth)
 })
 
@@ -46,6 +57,7 @@ next.addEventListener("click", function () {
         current = 0
     }
     buttonShow()
+    animate(list,"translate-left",pictureWidth)
     animateDistance(0-pictureWidth)
 })
 
@@ -71,3 +83,4 @@ carouselContainer.onmouseout = function(){
     next.style.opacity = 0.4
     play()
 }
+
