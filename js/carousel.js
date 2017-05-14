@@ -18,15 +18,10 @@ var pictureWidth = 600
 // }
 
 // 偏移距离
-var animateDistance = function (distance) {
-    var newLeft = parseInt(list.offsetLeft) + distance
+var animateDistance = function (distance, nowPage) {
+    var newLeft = distance*nowPage
     list.style.left = newLeft + "px"
-    if (newLeft < totalWidth) {
-        list.style.left = 0 + "px"
-    }
-    if (newLeft > 0) {
-        list.style.left = totalWidth + "px"
-    }
+    console.log(list.style.left)
 }
 
 // 小圆点变色
@@ -47,7 +42,7 @@ pre.addEventListener("click", function () {
     }
     buttonShow()
     // animate(list,"translate-left",pictureWidth)
-    animateDistance(pictureWidth)
+    animateDistance(0 - pictureWidth,current)
 })
 
 next.addEventListener("click", function () {
@@ -57,7 +52,7 @@ next.addEventListener("click", function () {
     }
     buttonShow()
     // animate(list,"translate-left",0-pictureWidth)
-    animateDistance(0 - pictureWidth)
+    animateDistance(0 - pictureWidth,current)
 })
 
 // 小圆点按钮点击切换图片
