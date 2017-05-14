@@ -1,12 +1,14 @@
 var list = document.getElementById("image-list")
+var imgBox = list.getElementsByTagName("img")
 var pre = document.getElementById("pre-button")
 var next = document.getElementById("next-button")
 var carouselContainer = document.getElementById("carousel-container")
 var buttons = document.getElementById("buttons").getElementsByTagName("span")
 var timer
 var current = 0
-var totalWidth = -2400
-var pictureWidth = 600
+var pictureNumber = 5
+var pictureWidth = 800
+var pictureHeight = 400
 
 // var animate = function(element, className,long){
 //     element.classList.add(className)
@@ -16,6 +18,19 @@ var pictureWidth = 600
 //     animateDistance(long)
 //     console.log(list.style.left)
 // }
+
+var initialSetting = function(){
+    list.style.width = pictureWidth * pictureNumber
+    list.style.height = pictureHeight
+    carouselContainer.style.width = pictureWidth
+    carouselContainer.style.height = pictureHeight
+    for(let i = 0; i < imgBox.length; i ++){
+        imgBox[i].style.width = pictureWidth
+        imgBox[i].style.height = pictureHeight
+    }
+}
+
+initialSetting()
 
 // 偏移距离
 var animateDistance = function (distance, nowPage) {
